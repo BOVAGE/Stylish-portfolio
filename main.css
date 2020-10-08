@@ -11,6 +11,7 @@ body {
 
 a {
 	text-decoration: none;
+	display: inline-block;
 }
 
 h1, h2, h3, h4, h5 {
@@ -19,7 +20,6 @@ h1, h2, h3, h4, h5 {
 }
 
 h1 {
-	text-align: center;
 	font-size: 5.0rem;
 	font-weight: 700;
 }
@@ -30,7 +30,6 @@ h2 {
 }
 
 h3 {
-	text-align: center;
 	font-size: 2.2rem;
 }
 
@@ -62,6 +61,7 @@ p {
 	color: white;
 	position: fixed;
 	right: 15px;
+	z-index: 2;
 	cursor: pointer;
 	background-color: rgba(52,58,64,.5);
 	transition: background-color 0.5s ease-in-out;
@@ -96,11 +96,60 @@ p {
 header {
 	font-family: serif;
 	background: url("images/bg-masthead.jpg") no-repeat center/cover;
+	text-align: center;
 }
 
 .menu.bar {
 	top: 15px;
-	padding: 20px;
+	padding: 15px 18px;
+}
+
+.sidebar {
+	background-color: #1d809f;
+	text-align: left;
+	height: 100vh;
+	width: 250px;
+	position: fixed;
+	right: 0;
+	z-index: 1;
+	transform: translateX(260px);
+	transition: transform 0.6s ease-in-out;
+}
+
+.sidebar.show {
+	transform: translateX(0);
+}
+
+p.logo {
+	background-color: rgba(52,58,64,.1);
+	padding: 25px 15px 0;
+	height: 76px;
+}
+
+.logo > a {
+	font-size: 1.2rem;
+	font-weight: bold;
+	color: white;
+}
+
+ul {
+	list-style: none;
+}
+
+li.nav-item {
+	
+}
+
+li.nav-item > a {
+	color: white;
+	font-size: 1.1rem;
+	line-height: 3;
+	width: 100%;
+	padding: 0 15px;
+}
+
+li.nav-item > a:hover {
+	background-color: rgba(255,255,255,.2);
 }
 
 header .landing-content {
@@ -109,7 +158,6 @@ header .landing-content {
 
 .landing-content > p {
 	margin-bottom: 50px;
-	line-height: 2;
 }
 
 .landing-text {
@@ -124,7 +172,7 @@ header .landing-content {
 }
 
 #showcase p {
-	font-size: 1.25rem;
+	font-size: 1.45rem;
 }
 
 .text-link {
@@ -182,22 +230,23 @@ header .landing-content {
  /* showcase2 section rules */
 #showcase2 {
 	background: url(images/bg-callout.jpg) no-repeat center/cover;
+	text-align: center;
 }
  
 #showcase2 .landing-content {
-	height: 700px;
+	height: 100vh;
 }
  
 #showcase2 h1 {
 	font-size: 3.3rem;
-	width: 50%;
-	padding: 10% 5% 7%;
+	width: 60%;
+	padding: 9% 3% 7%;
 }
 
 /* portfolio section rules */
 #portfolio {
 	text-align: center;
-	padding: 100px 30px;
+	padding: 100px 10px;
 }
 
 .projects-container {
@@ -239,7 +288,12 @@ header .landing-content {
 /* cta section rules */
 #cta {
 	background-color: #1d809f;
-	padding: 100px 0;
+	padding: 100px 10px;
+	text-align: center;
+}
+
+#cta h3 {
+	color: white;
 }
 
 .btn-group {
@@ -307,25 +361,14 @@ footer p {
 	h1 {
 		font-size: 4.0rem;
 	}
-	header .landing-content{
-		height: 65vh;
-	}
 	
 	.landing-text {
 		font-size: 2.0rem;
 		font-weight: bold;
 	}
 	
-	#showcase2 h1 {
-		width: 60%;
-	}
-	
 	.four-cols-container {
 		grid-template-columns: repeat(2, 1fr);
-	}
-	
-	.projects-container {
-		flex-direction: column;
 	}
 	
 	.project {
@@ -340,4 +383,37 @@ footer p {
 		bottom: 25px;
 		padding: 0 20% 0 30px;
 	}
+}
+
+@media (max-width: 768px) {
+	#services {
+		padding: 100px 20px;
+	}
+	
+	.four-cols-container {
+		grid-template-columns: 1fr;
+	}
+	
+	.project {
+		position: relative;
+		width: 75%;
+		margin: 10px auto;
+	}
+}
+
+@media (max-width: 700px) {
+	#showcase2 h1 {
+		font-size: 3.3rem;
+		width: 80%;
+		padding: 9% 3% 7%;
+	}
+}
+
+@media (max-width: 590px) {
+	.project {
+		position: relative;
+		width: 98%;
+		margin: 10px auto;
+	}
+	
 }

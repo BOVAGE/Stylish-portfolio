@@ -13,6 +13,18 @@
 		<!-- header section -->
 		<header id = "top">
 			<i class="fas fa-bars menu bar"></i>
+			
+			<div class = "sidebar">
+				<p class = "logo"><a href = "#">Start Bootstrap</a></p>
+				<ul>
+					<li class = "nav-item"><a href = "top">Home</a></li>
+					<li class = "nav-item"><a href = "showcase">About</a></li>
+					<li class = "nav-item"><a href = "services">Services</a></li>
+					<li class = "nav-item"><a href = "portfolio">Portfolio</a></li>
+					<li class = "nav-item"><a href = "top">Contact</a></li>
+				</ul>
+			</div>
+			
 			<div class = "landing-content">
 				<h1>Stylish Portfolio</h1>
 				<p class = "landing-text">A Free Bootstrap Theme by Start Bootstrap</p>
@@ -61,7 +73,7 @@
 					</div>
 					
 					<div class = "service-box">
-						<i class="fas fa-question fa-3x service-icon"></i>
+						<i class="fas fa-question fa-3x service-icon mobile-icon"></i>
 						<h4>Question</h4>
 						<p class = "service-text">I mustache you a question...</p>
 					</div>
@@ -159,5 +171,9 @@
 			<a href = "#top"<i class="fas fa-chevron-up menu up"></i>
 		</footer>
 		
+		<script>
+			document.querySelector(".bar").addEventListener
+			("click", () => document.querySelector(".sidebar").classList.toggle("show"));
+		</script>
 	</body>
 </html>
